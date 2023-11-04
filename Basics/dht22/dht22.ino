@@ -1,20 +1,11 @@
-/* How to use the DHT-22 sensor with Arduino uno
-   Temperature and humidity sensor
-*/
-
-//Libraries
 #include <DHT.h>;
 
 //Constants
-#define DHTPIN 2    // what pin we're connected to
-#define DHTTYPE DHT22   // DHT 22  (AM2302)
-DHT dht(DHTPIN, DHTTYPE); //// Initialize DHT sensor for normal 16mhz Arduino
+#define DHTPIN 2   
+#define DHTTYPE DHT22   
+DHT dht(DHTPIN, DHTTYPE); 
 
-
-//Variables
-int chk;
-float hum;  //Stores humidity value
-float temp; //Stores temperature value
+float temp; 
 
 void setup()
 {
@@ -24,17 +15,11 @@ void setup()
 
 void loop()
 {
-    delay(2000);
-    //Read data and store it to variables hum and temp
-    hum = dht.readHumidity();
+    delay(500);
     temp= dht.readTemperature();
-    //Print temp and humidity values to serial monitor
-    Serial.print("Humidity: ");
-    Serial.print(hum);
-    Serial.print(" %, Temp: ");
-    Serial.print(temp);
-    Serial.println(" Celsius");
-    delay(2000); //Delay 2 sec.
+    Serial.print("Temperature: ");
+    Serial.println(temp);
+    delay(500); 
 }
 
    
