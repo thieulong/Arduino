@@ -1,8 +1,13 @@
+const int relayTurbidityPin = 4;
+
 void setup() {
   Serial.begin(9600); // Baud rate: 9600
+  pinMode(relayTurbidityPin, OUTPUT);
 }
 
 void loop() {
+  digitalWrite(relayTurbidityPin, HIGH);
+  delay(2000);
   int sensorValue = analogRead(A3); // Read the input on analog pin A2
   float voltage = sensorValue * (5.0 / 1024.0); // Convert the sensor reading to voltage (0 - 5V)
 
@@ -22,5 +27,6 @@ void loop() {
   Serial.print("V\tMapped Value: ");
   Serial.println(mappedValue);
 
-  delay(500);
+  digitalWrite(relayTurbidityPin, LOW);
+  delay(2000);
 }

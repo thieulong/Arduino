@@ -7,11 +7,11 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(RELAY1_PIN, HIGH);
-  delay(30000); 
+//  digitalWrite(RELAY1_PIN, HIGH);
+//  delay(30000); 
   digitalWrite(RELAY1_PIN, LOW);
 
-  digitalWrite(RELAY2_PIN, HIGH);
-  delay(30000); 
+//  digitalWrite(RELAY2_PIN, HIGH);
+//  delay(30000); 
   digitalWrite(RELAY2_PIN, LOW);
 }
